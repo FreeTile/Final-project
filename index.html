@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <h1 id="Title"></h1>
+        <nav>
+            <ul>
+                <li><a href="#Games" onclick="showSection('Games'), LoadGames()">Games</a></li>
+                <li><a href="#NGame" id ="MNG" onclick="showSection('NGame')">New game</a></li>
+                <script>
+                  let MNGbutton = document.getElementById("MNG");
+                  MNGbutton.addEventListener('click', function() {
+                  document.getElementById("Title").innerText = "Add new Game";
+                  });
+                </script>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="Games">
+        <script src="JS/LoadGames.js"> LoadGames()</script>
+    </section>
+    
+    <section id="NGame">
+        <script src="JS/AddGame.js"></script>
+        <form id="AddGame">
+            <div>
+              <label for="GameName ">Game Name</label>
+              <input type="text" id="GameName"/>
+            </div>
+            <div>
+              <label for="Platform ">Platform</label>
+              <input type="text" id="Platform"/>
+            </div>
+            <div>
+              <button type="button" onclick="AddGame()">Submit</button>
+            </div>
+          </form>
+    </section>
+
+    <section id="LeaderBoard">
+        <script src="JS/LoadLeaderBoard.js"></script>
+    </section>
+
+    <section id="NData">
+        <script src="JS/NewLeaderBoardData.js"></script>
+        <form id="AddScore">
+            <div>
+              <label for="Player ">Player</label>
+              <input type="text" id="Player" required/>
+            </div>
+            <div>
+              <label for="Score ">Score</label>
+              <input type="number" id="Score"/>
+            </div>
+            <div>
+                <label for="Time ">Time</label>
+                <input type="text" id="Time" required/>
+              </div>
+            <div>
+              <button type="button" onclick="NewData(GameId)">Submit</button>
+            </div>
+          </form>
+    </section>
+
+    <script>
+        window.onload = function () {
+            showSection("");
+        };
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+        document.getElementById("Title").innerText = "Final Project";
+    </script>
+</body>
+</html>
