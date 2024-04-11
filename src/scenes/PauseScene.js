@@ -28,6 +28,7 @@ class PauseScene extends BaseScene {
       textGO.setStyle({fill: '#fff'});
     })
 
+    //when continue was pressed -> return to main gamescene
     textGO.on('pointerup', () => {
         if (menuItem.scene && menuItem.text === 'Continue') {
             this.scene.stop();

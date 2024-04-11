@@ -1,6 +1,5 @@
 
 import BaseScene from './BaseScene';
-import GameScene from './GameScene';
 
 class EndScreen extends BaseScene {
 

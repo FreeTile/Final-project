@@ -6,10 +6,9 @@ class PreloadScene extends Phaser.Scene {
     super('PreloadScene');
   }
 
+  //preloading BackGround and pause button
   preload() {
     this.load.image('sky', 'assets/Sky.jpg');
-    this.load.spritesheet('player', 'assets/Idle.png', { frameWidth: 32, frameHeight: 32 });
-    this.load.image('platform', 'assets/Platform.png');
     this.load.image('pause', 'assets/pause.png');
   }
 

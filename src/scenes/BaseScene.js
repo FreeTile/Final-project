@@ -1,6 +1,7 @@
 
 import Phaser from 'phaser';
 
+//Base scene for our game
 class BaseScene extends Phaser.Scene {
 
   constructor(key, config) {
@@ -13,19 +14,9 @@ class BaseScene extends Phaser.Scene {
 
   create() {
     this.add.image(-300, 0, 'sky').setOrigin(0);
-
-    if (this.config.canGoBack) {
-        const backButton = this.add.image(this.config.width - 10, this.config.height -10, 'back')
-          .setOrigin(1)
-          .setScale(2)
-          .setInteractive()
-  
-        backButton.on('pointerup', () => {
-          this.scene.start('GameScene');
-        })
-      }
   }
   
+  //function to create any menu screen in our game
   createMenu(menu, setupMenuEvents) {
     let lastMenuPositionY = 0;
 
